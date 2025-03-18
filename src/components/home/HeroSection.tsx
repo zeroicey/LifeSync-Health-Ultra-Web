@@ -7,13 +7,9 @@ import { useRef, useState, useEffect } from "react";
 
 interface HeroSectionProps {
   scrollYProgress: any;
-  mousePosition: { x: number; y: number };
 }
 
-export default function HeroSection({
-  scrollYProgress,
-  mousePosition,
-}: HeroSectionProps) {
+export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -24,27 +20,37 @@ export default function HeroSection({
   const [typingSpeed, setTypingSpeed] = useState(80);
 
   // 用于存储装饰元素的状态
-  const [decorativeLines, setDecorativeLines] = useState<Array<{ width: string; left: string; top: string }>>([]);
-  const [decorativeDots, setDecorativeDots] = useState<Array<{ width: string; height: string; left: string; top: string; opacity: number }>>([]);
-  
+  const [decorativeLines, setDecorativeLines] = useState<
+    Array<{ width: string; left: string; top: string }>
+  >([]);
+  const [decorativeDots, setDecorativeDots] = useState<
+    Array<{
+      width: string;
+      height: string;
+      left: string;
+      top: string;
+      opacity: number;
+    }>
+  >([]);
+
   // 初始化装饰元素
   useEffect(() => {
     // 生成线条
     const lines = Array.from({ length: 5 }).map((_, i) => ({
       width: `${Math.random() * 30 + 20}%`,
       left: `${Math.random() * 70}%`,
-      top: `${(i + 1) * 15}%`
+      top: `${(i + 1) * 15}%`,
     }));
-    
+
     // 生成圆点
     const dots = Array.from({ length: 15 }).map(() => ({
       width: `${Math.random() * 6 + 2}px`,
       height: `${Math.random() * 6 + 2}px`,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      opacity: Math.random() * 0.5 + 0.2
+      opacity: Math.random() * 0.5 + 0.2,
     }));
-    
+
     setDecorativeLines(lines);
     setDecorativeDots(dots);
   }, []);

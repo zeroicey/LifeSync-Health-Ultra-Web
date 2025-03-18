@@ -8,10 +8,7 @@ export default function WtihTopBarLayout({
   return (
     <>
       <Navbar />
-      <div>
-        Hello, this is topbar.
-        {children}
-      </div>
+      <div className="pt-16">{children}</div>
     </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 const Navbar: React.FC = () => {
+  const { setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState<"en" | "zh" | "ja">("zh");
@@ -26,8 +28,7 @@ const Navbar: React.FC = () => {
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    // Here you would implement the actual theme switching logic
-    // For example, adding/removing dark class to document.documentElement
+    setTheme(isDarkMode ? "light" : "dark");
   };
 
   return (

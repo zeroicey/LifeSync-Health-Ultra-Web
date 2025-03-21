@@ -15,12 +15,21 @@ import {
   Sun,
   Globe,
 } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const { setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState<"en" | "zh" | "ja">("zh");
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const switchLanguage = (locale: string) => {
+    const newPath = `/${locale}${pathname.substring(3)}`;
+    router.push(newPath);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -98,7 +107,10 @@ const Navbar: React.FC = () => {
           {/* Language Selector */}
           <div className="flex rounded-md overflow-hidden border border-gray-200">
             <button
-              onClick={() => setLanguage("en")}
+              onClick={() => {
+                switchLanguage("en");
+                setLanguage("en");
+              }}
               className={`px-2 py-1 text-xs ${
                 language === "en"
                   ? "bg-blue-600 text-white"
@@ -108,7 +120,10 @@ const Navbar: React.FC = () => {
               英
             </button>
             <button
-              onClick={() => setLanguage("zh")}
+              onClick={() => {
+                switchLanguage("zh");
+                setLanguage("zh");
+              }}
               className={`px-2 py-1 text-xs ${
                 language === "zh"
                   ? "bg-blue-600 text-white"
@@ -118,7 +133,10 @@ const Navbar: React.FC = () => {
               中
             </button>
             <button
-              onClick={() => setLanguage("ja")}
+              onClick={() => {
+                switchLanguage("ja");
+                setLanguage("ja");
+              }}
               className={`px-2 py-1 text-xs ${
                 language === "ja"
                   ? "bg-blue-600 text-white"

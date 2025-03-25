@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +21,12 @@ export const metadata: Metadata = {
   description:
     "我们打开了解每个人的生命健康和心理需求的新方式，让每个人都能享受科技带来的健康生活。",
 };
-import { NextIntlClientProvider, Locale, hasLocale } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
 
 export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-
   params: Promise<{ locale: string }>;
 }>) {
   // Ensure that the incoming `locale` is valid

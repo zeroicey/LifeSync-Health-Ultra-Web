@@ -94,7 +94,7 @@ export function UserMenu({
               {user.name.substring(0, 2).toUpperCase()}
             </AvatarFallback>
           </Avatar>
-          <div className="hidden sm:grid flex-1 text-left text-sm leading-tight">
+          <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="font-medium text-slate-800 dark:text-slate-200">
               {user.name}
             </span>

@@ -1,34 +1,32 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "next-themes";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { ReactNode } from "react";
 import { routing } from "@/i18n/routing";
+import "../globals.css";
+import Navbar from "@/components/navbar";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { MobileMenu } from "@/components/navbar/MoblieMenu";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "心身同调·全维健康",
-  description:
-    "我们打开了解每个人的生命健康和心理需求的新方式，让每个人都能享受科技带来的健康生活。",
+type Props = {
+  children: ReactNode;
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}>) {
+export async function generateMetadata(props: Omit<Props, "children">) {
+  const { locale } = await props.params;
+
+  const t = await getTranslations({ locale, namespace: "RootLayout" });
+
+  return {
+    title: t("title"),
+    description:
+      "我们打开了解每个人的生命健康和心理需求的新方式，让每个人都能享受科技带来的健康生活。",
+  };
+}
+
+export default async function RootLayout({ children, params }: Props) {
   // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
@@ -36,9 +34,7 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

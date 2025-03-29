@@ -1,4 +1,6 @@
-import Navbar from "@/components/navbar/navbar";
+import Navbar from "@/components/navbar";
+import { MobileMenu } from "@/components/navbar/MoblieMenu";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function WtihTopBarLayout({
   children,
@@ -6,9 +8,12 @@ export default function WtihTopBarLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Navbar />
-      <div className="pt-16">{children}</div>
-    </>
+    <SidebarProvider defaultOpen={false}>
+      <MobileMenu />
+      <main className="w-full min-h-screen">
+        <Navbar />
+        {children}
+      </main>
+    </SidebarProvider>
   );
 }

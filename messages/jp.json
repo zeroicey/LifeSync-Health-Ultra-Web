@@ -53,5 +53,38 @@
     "community": "コミュニティ",
     "assistant": "アシスタント",
     "store": "ストア"
+  },
+  "Auth": {
+    "login": {
+      "title": "おかえりなさい",
+      "description": "GitHubまたはGoogleアカウントでログイン",
+      "emailLabel": "メールアドレス",
+      "passwordLabel": "パスワード",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "loginButton": "ログイン",
+      "noAccount": "アカウントをお持ちでないですか？",
+      "signupLink": "登録する",
+      "orContinueWith": "または続ける",
+      "termsText": "ログインすることで、当社の",
+      "termsLink": "利用規約",
+      "andText": "および",
+      "privacyLink": "プライバシーポリシー",
+      "githubLogin": "GitHubでログイン",
+      "googleLogin": "Googleでログイン"
+    },
+    "register": {
+      "title": "アカウント作成",
+      "description": "すべての機能を利用するために新しいアカウントを登録",
+      "emailLabel": "メールアドレス",
+      "passwordLabel": "パスワード",
+      "confirmPasswordLabel": "パスワード確認",
+      "registerButton": "登録",
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "loginLink": "ログイン",
+      "termsText": "登録することで、当社の",
+      "termsLink": "利用規約",
+      "andText": "および",
+      "privacyLink": "プライバシーポリシー"
+    }
   }
 }

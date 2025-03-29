@@ -53,5 +53,38 @@
     "community": "Community",
     "assistant": "Assistant",
     "store": "Store"
+  },
+  "Auth": {
+    "login": {
+      "title": "Welcome Back",
+      "description": "Login with GitHub or Google account",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Login",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up",
+      "orContinueWith": "Or continue with",
+      "termsText": "By clicking login, you agree to our",
+      "termsLink": "Terms of Service",
+      "andText": "and",
+      "privacyLink": "Privacy Policy",
+      "githubLogin": "Login with GitHub",
+      "googleLogin": "Login with Google"
+    },
+    "register": {
+      "title": "Create Account",
+      "description": "Register a new account to use full features",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "registerButton": "Register",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Login",
+      "termsText": "By clicking register, you agree to our",
+      "termsLink": "Terms of Service",
+      "andText": "and",
+      "privacyLink": "Privacy Policy"
+    }
   }
 }

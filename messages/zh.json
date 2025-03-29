@@ -53,5 +53,38 @@
     "community": "社区",
     "assistant": "助手",
     "store": "商城"
+  },
+  "Auth": {
+    "login": {
+      "title": "欢迎回来",
+      "description": "使用 GitHub 或 Google 账号登录",
+      "emailLabel": "电子邮箱",
+      "passwordLabel": "密码",
+      "forgotPassword": "忘记密码？",
+      "loginButton": "登录",
+      "noAccount": "还没有账户？",
+      "signupLink": "注册",
+      "orContinueWith": "或使用邮箱登录",
+      "termsText": "点击登录，即表示您同意我们的",
+      "termsLink": "服务条款",
+      "andText": "和",
+      "privacyLink": "隐私政策",
+      "githubLogin": "使用 GitHub 登录",
+      "googleLogin": "使用 Google 登录"
+    },
+    "register": {
+      "title": "创建账户",
+      "description": "注册一个新账户以使用完整功能",
+      "emailLabel": "电子邮箱",
+      "passwordLabel": "密码",
+      "confirmPasswordLabel": "确认密码",
+      "registerButton": "注册",
+      "hasAccount": "已有账户？",
+      "loginLink": "登录",
+      "termsText": "点击注册，即表示您同意我们的",
+      "termsLink": "服务条款",
+      "andText": "和",
+      "privacyLink": "隐私政策"
+    }
   }
 }

@@ -4,10 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { ReactNode } from "react";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
-import Navbar from "@/components/navbar";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { MobileMenu } from "@/components/navbar/MoblieMenu";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 type Props = {
   children: ReactNode;

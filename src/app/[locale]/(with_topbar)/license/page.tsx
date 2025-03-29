@@ -1,6 +1,11 @@
+import { Props } from "@/types/setting";
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-export default function LicensePage() {
+export default function LicensePage({ params }: Props) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   const t = useTranslations("LicensePage");
   return (
     <div>

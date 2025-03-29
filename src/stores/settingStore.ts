@@ -1,8 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-type Language = "zh" | "en" | "jp";
-type Theme = "light" | "dark" | "system";
+import { Language, Theme } from "../types/setting";
 
 export interface LanguageState {
   language: Language;

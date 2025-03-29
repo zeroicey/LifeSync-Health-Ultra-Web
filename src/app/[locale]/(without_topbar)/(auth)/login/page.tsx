@@ -1,8 +1,13 @@
 import { GalleryVerticalEnd } from "lucide-react";
 
 import LoginForm from "@/components/auth/LoginForm";
+import { Props } from "@/types/setting";
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
 
-export default function LoginPage() {
+export default function LoginPage({ params }: Props) {
+  const { locale } = use(params);
+  setRequestLocale(locale);
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10">
       <div className="flex w-full max-w-sm flex-col gap-6">

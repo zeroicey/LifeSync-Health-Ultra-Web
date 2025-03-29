@@ -4,8 +4,46 @@
     "content": "MIT License (Modified)\n\nCopyright (c) 2024 zeroicey\n\nPermission is hereby granted to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this software under the following conditions:\n\n1. This software is restricted to users who have obtained written consent from zeroicey.\n2. All uses, modifications, or distributions of this software must retain the above copyright notice and obtain explicit written authorization.\n3. This software is provided \"as is,\" without any warranties, express or implied, including but not limited to merchantability, fitness for a particular purpose, or non-infringement.\n\nAny unauthorized use, copying, or distribution is illegal and may result in legal action."
   },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "title": "LifeSync · Holistic Health",
+    "about": "Go to the about page",
+    "typeText": "Focusing on mind-body health, empowering personalized management with data and emotional support.%Integrating community, AI assistant, and multi-device sync for comprehensive health management.%Positive reinforcement helps build lasting healthy habits.%Data-driven insights + emotional support make health management less lonely.%Your personal health advisor, providing professional guidance anytime.",
+    "beginNow": "Start Now",
+    "viewMore": "View More",
+    "scrollDown": "Scroll down to learn more",
+    "features": {
+      "title": "Holistic Health Management Features",
+      "subtitle": "Our platform provides comprehensive health management functions to help you achieve coordinated development of physical and mental health.",
+      "physicalHealth": {
+        "title": "Physical Health Monitoring",
+        "description": "Comprehensively record and analyze your physical health data, including multi-dimensional information such as exercise, sleep, and diet."
+      },
+      "mentalHealth": {
+        "title": "Mental Health Assessment",
+        "description": "Through scientific psychological evaluation tools, help you understand your mental state and adjust your mental health in a timely manner."
+      },
+      "emotionManagement": {
+        "title": "Emotion Management",
+        "description": "Record emotional changes, provide emotional regulation methods, and help you maintain a positive and optimistic attitude."
+      },
+      "healthRisk": {
+        "title": "Health Risk Warning",
+        "description": "Based on your health data, predict potential health risks and provide personalized health advice."
+      },
+      "aiAssistant": {
+        "title": "AI Health Assistant",
+        "description": "Intelligent AI assistant provides 24-hour health consultation services, answering health questions and providing professional advice."
+      },
+      "multiDevice": {
+        "title": "Multi-device Data Synchronization",
+        "description": "Support data synchronization of various health devices, integrate various health data, and provide a comprehensive health view."
+      }
+    },
+    "cta": {
+      "badge": "Start Your Health Journey",
+      "title": "Begin Your Holistic Health Journey",
+      "description": "Join us and experience a new way of coordinated physical and mental health management, making health management simple and effective.",
+      "button": "Register Now"
+    }
   },
   "RootLayout": {
     "title": "LifeSync · Holistic Health"

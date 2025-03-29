@@ -3,13 +3,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 interface HeroSectionProps {
   scrollYProgress: any;
 }
 
 export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
+  const t = useTranslations("HomePage");
+  const splitTextVariants = (text: string): string[] => text.split("%");
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -56,13 +60,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
   }, []);
 
   // 多个不同的文本内容
-  const textVariants = [
-    '专注于身心协同健康管理的平台，通过技术赋能用户实现个性化的健康目标，打造"数据驱动+情感支持"的双维健康管理体验。',
-    "整合社区互动、AI健康助手与多设备数据同步，为您提供全方位的健康管理解决方案。",
-    "通过正向激励体系，帮助您建立健康习惯，实现身心健康的长期平衡。",
-    "数据驱动的健康分析，结合情感支持，让健康管理不再是孤独的旅程。",
-    "您的私人健康顾问，随时随地为您提供专业的健康建议和支持。",
-  ];
+  const textVariants = splitTextVariants(t("typeText"));
 
   useEffect(() => {
     const handleTyping = () => {
@@ -96,6 +94,14 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
   }, [typingText, currentTextIndex, isDeleting, typingSpeed, textVariants]);
+
+  // 滚动到特性部分的函数
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById("features-section");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
@@ -319,7 +325,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
               },
             }}
           >
-            心身同调·全维健康
+            {t("title")}
           </motion.h1>
 
           {/* 打字机效果的文本 */}
@@ -332,20 +338,23 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 w-full shadow-lg shadow-blue-500/20"
-              >
-                立即开始 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/community">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 w-full shadow-lg shadow-blue-500/20"
+                >
+                  {t("beginNow")} <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 variant="outline"
                 className="bg-white text-blue-600 border-white hover:bg-white/90 w-full"
+                onClick={scrollToFeatures}
               >
-                查看详情
+                {t("viewMore")}
               </Button>
             </motion.div>
           </div>
@@ -358,7 +367,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <p className="mb-2 text-sm">向下滚动了解更多</p>
+        <p className="mb-2 text-sm">{t("scrollDown")}</p>
         <ChevronDown className="h-6 w-6" />
       </motion.div>
     </section>

@@ -39,7 +39,7 @@ import {
   ThemeState,
   useLanguageStore,
   useThemeStore,
-} from "@/stores/settingStore";
+} from "@/stores/setting.store";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { useTheme } from "next-themes";

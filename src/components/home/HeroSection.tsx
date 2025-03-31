@@ -353,11 +353,9 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
                 key={`service-${index}`}
                 whileHover={{ scale: 1.05, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white/20 backdrop-blur-sm rounded-xl py-2 md:py-3 px-3 md:px-4 flex flex-row items-center justify-start text-white shadow-lg border border-white/20 hover:border-white/40 transition-all"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-2 flex flex-row items-center justify-start text-white shadow-lg border border-white/20 hover:border-white/40 transition-all"
               >
-                <div className="text-xl md:text-2xl mr-2 md:mr-3">
-                  {item.icon}
-                </div>
+                <div className="text-xl mr-2 md:mr-3">{item.icon}</div>
                 <div className="text-xs md:text-sm font-medium">
                   {item.title}
                 </div>
@@ -427,7 +425,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-row gap-6 sm:gap-12 md:gap-24 mb-4 md:mb-8 text-center"
+          className="hidden lg:flex flex-row gap-6 sm:gap-12 md:gap-24 mb-4 md:mb-8 text-center"
         >
           {[
             { number: "5000+", label: t("stats.dailyUsers") },
@@ -449,7 +447,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           ))}
         </motion.div>
 
-        {/* <p className="mb-2 text-sm select-none">{t("scrollDown")}</p> */}
+        <p className="mb-2 text-sm select-none">{t("scrollDown")}</p>
         <ChevronDown className="h-6 w-6" />
       </motion.div>
     </section>

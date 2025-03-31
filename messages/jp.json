@@ -10,6 +10,17 @@
     "beginNow": "今すぐ始める",
     "viewMore": "もっと見る",
     "scrollDown": "下にスクロールして詳細を見る",
+    "services": {
+      "dataTracking": "スマートデータ追跡",
+      "mentalHealth": "メンタルヘルス保護",
+      "communitySupport": "専門コミュニティ",
+      "dataProtection": "プライバシー保護"
+    },
+    "stats": {
+      "dailyUsers": "日間アクティブユーザー",
+      "userRating": "ユーザー評価",
+      "aiIterations": "AIモデル反復"
+    },
     "features": {
       "title": "ホリスティック健康管理の特徴",
       "subtitle": "当プラットフォームは、心身の健康の調和した発展を実現するための包括的な健康管理機能を提供します。",

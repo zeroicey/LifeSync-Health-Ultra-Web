@@ -10,6 +10,17 @@
     "beginNow": "立即开始",
     "viewMore": "查看更多",
     "scrollDown": "向下滚动了解更多",
+    "services": {
+      "dataTracking": "智能数据追踪",
+      "mentalHealth": "心理健康守护",
+      "communitySupport": "专业社区支持",
+      "dataProtection": "隐私数据保护"
+    },
+    "stats": {
+      "dailyUsers": "日活用户",
+      "userRating": "用户评分",
+      "aiIterations": "AI模型迭代"
+    },
     "features": {
       "title": "全维健康管理特色",
       "subtitle": "我们的平台提供全方位的健康管理功能，帮助您实现身心健康的协同发展。",

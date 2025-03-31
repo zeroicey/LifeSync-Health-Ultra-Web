@@ -10,6 +10,17 @@
     "beginNow": "Start Now",
     "viewMore": "View More",
     "scrollDown": "Scroll down to learn more",
+    "services": {
+      "dataTracking": "Smart Data Tracking",
+      "mentalHealth": "Mental Health Protection",
+      "communitySupport": "Professional Community",
+      "dataProtection": "Privacy Protection"
+    },
+    "stats": {
+      "dailyUsers": "Daily Active Users",
+      "userRating": "User Rating",
+      "aiIterations": "AI Model Iterations"
+    },
     "features": {
       "title": "Holistic Health Management Features",
       "subtitle": "Our platform provides comprehensive health management functions to help you achieve coordinated development of physical and mental health.",

@@ -306,7 +306,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           className="max-w-3xl mx-auto"
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent mb-6"
+            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent mb-6 select-none"
             animate={{
               backgroundImage: [
                 "linear-gradient(to right, rgba(96, 165, 250, 1), rgba(167, 139, 250, 1), rgba(103, 232, 249, 1))",
@@ -329,15 +329,48 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
           </motion.h1>
 
           {/* 打字机效果的文本 */}
-          <div className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md h-24 flex items-center justify-center">
+          <div className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md h-24 flex items-center justify-center select-none">
             <p>
               {typingText}
               <span className="animate-pulse">|</span>
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          {/* 四个服务框框 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8 w-full max-w-md md:max-w-4xl mx-auto px-2 sm:px-0"
+          >
+            {[
+              { icon: "📊", title: t("services.dataTracking") },
+              { icon: "🧠", title: t("services.mentalHealth") },
+              { icon: "👥", title: t("services.communitySupport") },
+              { icon: "🛡️", title: t("services.dataProtection") },
+            ].map((item, index) => (
+              <motion.div
+                key={`service-${index}`}
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white/20 backdrop-blur-sm rounded-xl py-2 md:py-3 px-3 md:px-4 flex flex-row items-center justify-start text-white shadow-lg border border-white/20 hover:border-white/40 transition-all"
+              >
+                <div className="text-xl md:text-2xl mr-2 md:mr-3">
+                  {item.icon}
+                </div>
+                <div className="text-xs md:text-sm font-medium">
+                  {item.title}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div className="flex flex-col md:flex-row gap-4 justify-center select-none max-w-md md:max-w-none mx-auto w-full px-2 md:px-0">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
+            >
               <Link href="/community">
                 <Button
                   size="lg"
@@ -347,7 +380,11 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
                 </Button>
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
+            >
               <Button
                 size="lg"
                 variant="outline"
@@ -357,17 +394,62 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
                 {t("viewMore")}
               </Button>
             </motion.div>
+
+            {/* 移动端按钮 */}
+            <Link href="/community" className="md:hidden w-full">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 w-full shadow-lg shadow-blue-500/20"
+              >
+                {t("beginNow")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white text-blue-600 border-white hover:bg-white/90 w-full md:hidden"
+              onClick={scrollToFeatures}
+            >
+              {t("viewMore")}
+            </Button>
           </div>
         </motion.div>
       </motion.div>
 
       {/* 向下滚动提示 */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white"
+        className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <p className="mb-2 text-sm">{t("scrollDown")}</p>
+        {/* 统计数据 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-row gap-6 sm:gap-12 md:gap-24 mb-4 md:mb-8 text-center"
+        >
+          {[
+            { number: "5000+", label: t("stats.dailyUsers") },
+            { number: "4.8", label: t("stats.userRating") },
+            { number: "3+", label: t("stats.aiIterations") },
+          ].map((stat, index) => (
+            <motion.div
+              key={`stat-${index}`}
+              whileHover={{ scale: 1.05 }}
+              className="flex flex-col items-center"
+            >
+              <div className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-0.5 md:mb-1">
+                {stat.number}
+              </div>
+              <div className="text-2xs sm:text-xs md:text-sm text-white/80">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* <p className="mb-2 text-sm select-none">{t("scrollDown")}</p> */}
         <ChevronDown className="h-6 w-6" />
       </motion.div>
     </section>

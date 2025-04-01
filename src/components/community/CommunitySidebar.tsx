@@ -15,20 +15,32 @@ import {
   Moon,
   Leaf,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { mockTags } from "@/mock/communityData";
 import { Link } from "@/i18n/navigation";
 
 interface CommunitySidebarProps {
   locale: string;
+  isLoading?: boolean;
 }
 
-export function CommunitySidebar({ locale }: CommunitySidebarProps) {
+export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebarProps) {
   const t = useTranslations("Community");
-  const { categories, currentUser, queryParams, fetchPosts } =
+  const { categories, currentUser, queryParams, fetchPosts, fetchCategories } =
     useCommunityStore();
   const [searchQuery, setSearchQuery] = useState("");
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+
+  // 初始加载分类
+  useEffect(() => {
+    const loadCategories = async () => {
+      await fetchCategories();
+      setIsInitialLoading(false);
+    };
+    
+    loadCategories();
+  }, [fetchCategories]);
 
   // 处理搜索
   const handleSearch = (e: React.FormEvent) => {
@@ -72,6 +84,13 @@ export function CommunitySidebar({ locale }: CommunitySidebarProps) {
     }
   };
 
+  // 如果正在加载，则导入并返回骨架屏组件
+  if (isLoading || isInitialLoading) {
+    // 使用动态导入避免服务端渲染问题
+    const CommunitySidebarSkeleton = require('./CommunitySidebarSkeleton').CommunitySidebarSkeleton;
+    return <CommunitySidebarSkeleton />;
+  }
+
   return (
     <div className="space-y-6">
       {/* 用户信息卡片 */}
@@ -114,7 +133,7 @@ export function CommunitySidebar({ locale }: CommunitySidebarProps) {
         </div>
 
         <Button className="w-full">
-          <Link href="/community/create">
+          <Link href={`/${locale}/community/create`} className="flex items-center w-full justify-center">
             <Plus className="h-4 w-4 mr-2" />
             {t("createPost")}
           </Link>

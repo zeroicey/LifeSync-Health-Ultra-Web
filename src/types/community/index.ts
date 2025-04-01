@@ -28,6 +28,7 @@ export interface Comment {
   createdAt: string;
   likes: number;
   isLiked?: boolean;
+  parentId?: string; // 父评论ID，如果是回复其他评论
   replies?: Comment[];
 }
 

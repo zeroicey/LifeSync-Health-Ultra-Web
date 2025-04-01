@@ -21,6 +21,7 @@ interface CommunityState {
   fetchPosts: (params?: PostsQueryParams) => Promise<void>;
   fetchPostById: (id: string) => Promise<void>;
   fetchComments: (postId: string) => Promise<void>;
+  fetchCategories: () => Promise<void>;
   createPost: (params: CreatePostParams) => Promise<void>;
   updatePost: (id: string, params: Partial<CreatePostParams>) => Promise<void>;
   deletePost: (id: string) => Promise<void>;
@@ -139,6 +140,19 @@ export const useCommunityStore = create<CommunityState>((set, get) => ({
       set({ comments });
     } catch (error) {
       console.error('Failed to fetch comments:', error);
+    }
+  },
+  
+  // 模拟获取分类列表
+  fetchCategories: async () => {
+    try {
+      // 模拟API请求延迟
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      // 这里使用模拟数据，实际项目中应该从API获取
+      set({ categories: mockCategories });
+    } catch (error) {
+      console.error('Failed to fetch categories:', error);
     }
   },
   

@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ["picsum.photos", "loremflickr.com"],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

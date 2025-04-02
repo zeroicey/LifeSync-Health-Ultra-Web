@@ -25,7 +25,10 @@ interface CommunitySidebarProps {
   isLoading?: boolean;
 }
 
-export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebarProps) {
+export function CommunitySidebar({
+  locale,
+  isLoading = false,
+}: CommunitySidebarProps) {
   const t = useTranslations("Community");
   const { categories, currentUser, queryParams, fetchPosts, fetchCategories } =
     useCommunityStore();
@@ -38,7 +41,7 @@ export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebar
       await fetchCategories();
       setIsInitialLoading(false);
     };
-    
+
     loadCategories();
   }, [fetchCategories]);
 
@@ -87,7 +90,8 @@ export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebar
   // 如果正在加载，则导入并返回骨架屏组件
   if (isLoading || isInitialLoading) {
     // 使用动态导入避免服务端渲染问题
-    const CommunitySidebarSkeleton = require('./CommunitySidebarSkeleton').CommunitySidebarSkeleton;
+    const CommunitySidebarSkeleton =
+      require("./CommunitySidebarSkeleton").CommunitySidebarSkeleton;
     return <CommunitySidebarSkeleton />;
   }
 
@@ -133,7 +137,10 @@ export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebar
         </div>
 
         <Button className="w-full">
-          <Link href={`/${locale}/community/create`} className="flex items-center w-full justify-center">
+          <Link
+            href={`/community/create`}
+            className="flex items-center w-full justify-center"
+          >
             <Plus className="h-4 w-4 mr-2" />
             {t("createPost")}
           </Link>
@@ -173,16 +180,16 @@ export function CommunitySidebar({ locale, isLoading = false }: CommunitySidebar
               )}
               onClick={() => handleCategoryClick(category.id)}
             >
-              <div className="flex items-center">
+              <div className="flex items-center flex-row">
                 <div className="mr-3 text-gray-500 dark:text-gray-400">
                   {getIconComponent(category.iconName)}
                 </div>
                 <div className="flex-1">
-                  <div className="font-medium text-gray-900 dark:text-gray-100">
+                  <div className="font-medium text-gray-900 dark:text-gray-100 flex gap-2">
                     {category.name}
-                  </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">
-                    {category.postCount} {t("posts")}
+                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                      {category.postCount} {t("posts")}
+                    </span>
                   </div>
                 </div>
               </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useCommunityStore } from "@/stores/community.store";
 import { CreatePostParams, Post } from "@/types/community";
@@ -12,6 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { X, Image as ImageIcon, Loader2 } from "lucide-react";
 import { mockTags } from "@/mock/communityData";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 interface CreatePostFormProps {
   postToEdit?: Post;
@@ -20,7 +20,6 @@ interface CreatePostFormProps {
 
 export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
   const t = useTranslations("Community");
-  const router = useRouter();
   const { createPost, updatePost, isSubmitting, currentUser } = useCommunityStore();
   
   // 表单状态
@@ -30,6 +29,8 @@ export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
   const [imageUrls, setImageUrls] = useState<string[]>(postToEdit?.imageUrls || []);
   const [showTagSelector, setShowTagSelector] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedPostId, setSubmittedPostId] = useState<string | null>(null);
   
   // 表单验证
   const isFormValid = content.trim().length > 0;
@@ -50,11 +51,20 @@ export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
     if (postToEdit) {
       // 更新帖子
       await updatePost(postToEdit.id, postData);
-      router.push(`/community/posts/${postToEdit.id}`);
+      setIsSubmitted(true);
+      setSubmittedPostId(postToEdit.id);
     } else {
       // 创建新帖子
-      await createPost(postData);
-      router.push("/community");
+      try {
+        // 创建帖子后，使用模拟的ID
+        await createPost(postData);
+        // 由于store中的createPost不返回ID，我们使用模拟ID
+        const mockPostId = `post-${Date.now()}`;
+        setIsSubmitted(true);
+        setSubmittedPostId(mockPostId);
+      } catch (error) {
+        console.error('创建帖子失败', error);
+      }
     }
   };
   
@@ -87,6 +97,34 @@ export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
   const handleRemoveImage = (index: number) => {
     setImageUrls(prev => prev.filter((_, i) => i !== index));
   };
+  
+  // 如果提交成功，显示成功消息并提供导航链接
+  if (isSubmitted && submittedPostId) {
+    return (
+      <div className="flex flex-col items-center justify-center py-8">
+        <div className="text-center mb-6">
+          <h3 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-2">
+            {postToEdit ? t("postUpdated") : t("postPublished")}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400">
+            {postToEdit ? t("postUpdatedDescription") : t("postPublishedDescription")}
+          </p>
+        </div>
+        <div className="flex space-x-4">
+          <Button asChild>
+            <Link href={`/community/posts/${submittedPostId}`}>
+              {t("viewPost")}
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/community">
+              {t("backToCommunity")}
+            </Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -239,10 +277,11 @@ export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
         <Button
           type="button"
           variant="outline"
-          onClick={() => router.back()}
-          disabled={isSubmitting}
+          asChild
         >
-          {t("cancel")}
+          <Link href="/community">
+            {t("cancel")}
+          </Link>
         </Button>
         <Button
           type="submit"

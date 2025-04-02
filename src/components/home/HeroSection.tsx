@@ -440,7 +440,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex flex-row gap-6 sm:gap-12 md:gap-24 mb-4 md:mb-8 text-center items-center justify-center justify-between mt-20"
+            className="hidden lg:flex flex-row gap-6 sm:gap-12 md:gap-24 mb-4 md:mb-8 text-center items-center justify-around mt-15"
           >
             {[
               { number: "5000+", label: t("stats.dailyUsers") },
@@ -465,7 +465,7 @@ export default function HeroSection({ scrollYProgress }: HeroSectionProps) {
       </motion.div>
       {/* 向下滚动提示 */}
       <motion.div
-        className="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white"
+        className="absolute bottom-2 md:bottom-8 left-1/2 transform -translate-x-1/2 lg:flex flex-col items-center text-white hidden"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

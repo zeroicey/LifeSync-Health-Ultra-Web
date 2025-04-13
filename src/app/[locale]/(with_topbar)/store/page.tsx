@@ -1,9 +1,12 @@
-import { Props } from "@/types/setting";
-import { setRequestLocale } from "next-intl/server";
-import { use } from "react";
+"use client";
 
-export default function StorePage({ params }: Props) {
-  const { locale } = use(params);
-  setRequestLocale(locale);
-  return <div>Hello, this is Store Page</div>;
+import { useTranslations } from "next-intl";
+import { StorePage } from "@/components/store/StorePage";
+import { useParams } from "next/navigation";
+
+export default function StorePageContainer() {
+  const params = useParams();
+  const locale = params.locale as string;
+  
+  return <StorePage locale={locale} />;
 }

@@ -206,5 +206,62 @@
     "requiredField": "此字段为必填项",
     "minLength": "最少需要 {count} 个字符",
     "maxLength": "最多允许 {count} 个字符"
+  },
+  "Store": {
+    "storeTitle": "课程商城",
+    "yourPoints": "您的积分",
+    "pointsDescription": "积分可用于兑换各种健康课程和资源，通过记录健康数据和参与社区活动获得更多积分。",
+    "featuredCourses": "精选课程",
+    "allCourses": "所有课程",
+    "viewDetails": "查看详情",
+    "purchase": "购买课程",
+    "purchasing": "购买中...",
+    "viewCourse": "查看课程",
+    "purchaseCourse": "购买课程",
+    "close": "关闭",
+    "points": "积分",
+    "minutes": "分钟",
+    "loading": "加载中...",
+    "noCourses": "暂无课程",
+    "tryDifferentCategory": "尝试选择其他分类",
+    "courseDescription": "课程描述",
+    "whatYouWillLearn": "您将学到什么",
+    "new": "新课程",
+    "popular": "热门",
+    "featured": "精选",
+    "purchased": "已购买",
+    "viewAll": "查看全部",
+    "totalPoints": "总积分",
+    "earnMorePoints": "获取更多积分",
+    "youHaveEnoughPoints": "您有足够的积分（当前：{current}，需要：{required}）",
+    "youNeedMorePoints": "积分不足（当前：{current}，需要：{required}，还差：{needed}）",
+    "categories": {
+      "title": "课程分类",
+      "all": "全部课程",
+      "yoga": "瑜伽",
+      "fitness": "健身",
+      "nutrition": "营养",
+      "meditation": "冥想",
+      "mental_health": "心理健康",
+      "sleep": "睡眠",
+      "traditional_medicine": "传统医学"
+    },
+    "levels": {
+      "beginner": "初级",
+      "intermediate": "中级",
+      "advanced": "高级"
+    },
+    "notifications": {
+      "purchaseSuccess": "课程购买成功！",
+      "purchaseError": "购买失败，请稍后再试。",
+      "insufficientPoints": "积分不足，无法购买此课程。",
+      "alreadyPurchased": "您已购买此课程。"
+    },
+    "motivationalQuote1": "健康不仅是身体的状态，更是心灵的平衡。",
+    "motivationalQuote2": "每一个小小的健康习惯，都是对未来的投资。",
+    "motivationalQuote3": "知识是改变生活的力量，学习是终身的旅程。",
+    "motivationalQuote4": "照顾好自己，才能更好地照顾他人。",
+    "motivationalQuote5": "健康的身体是心灵的居所，让我们一起建造它。",
+    "motivationalSubtext": "使用您的积分，开启健康学习之旅"
   }
 }

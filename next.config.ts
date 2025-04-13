@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["picsum.photos", "loremflickr.com"],
+    domains: ["picsum.photos", "loremflickr.com", "images.unsplash.com"],
   },
 };
 

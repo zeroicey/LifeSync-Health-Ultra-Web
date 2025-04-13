@@ -206,5 +206,62 @@
     "requiredField": "This field is required",
     "minLength": "Minimum length is {count} characters",
     "maxLength": "Maximum length is {count} characters"
+  },
+  "Store": {
+    "storeTitle": "Course Store",
+    "yourPoints": "Your Points",
+    "pointsDescription": "Points can be used to redeem various health courses and resources. Earn more points by recording health data and participating in community activities.",
+    "featuredCourses": "Featured Courses",
+    "allCourses": "All Courses",
+    "viewDetails": "View Details",
+    "purchase": "Purchase",
+    "purchasing": "Purchasing...",
+    "viewCourse": "View Course",
+    "purchaseCourse": "Purchase Course",
+    "close": "Close",
+    "points": "points",
+    "minutes": "minutes",
+    "loading": "Loading...",
+    "noCourses": "No courses available",
+    "tryDifferentCategory": "Try selecting a different category",
+    "courseDescription": "Course Description",
+    "whatYouWillLearn": "What You Will Learn",
+    "new": "New",
+    "popular": "Popular",
+    "featured": "Featured",
+    "purchased": "Purchased",
+    "viewAll": "View All",
+    "totalPoints": "Total Points",
+    "earnMorePoints": "Earn More Points",
+    "youHaveEnoughPoints": "You have enough points (Current: {current}, Required: {required})",
+    "youNeedMorePoints": "Not enough points (Current: {current}, Required: {required}, Needed: {needed})",
+    "categories": {
+      "title": "Categories",
+      "all": "All Courses",
+      "yoga": "Yoga",
+      "fitness": "Fitness",
+      "nutrition": "Nutrition",
+      "meditation": "Meditation",
+      "mental_health": "Mental Health",
+      "sleep": "Sleep",
+      "traditional_medicine": "Traditional Medicine"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "notifications": {
+      "purchaseSuccess": "Course purchased successfully!",
+      "purchaseError": "Purchase failed. Please try again later.",
+      "insufficientPoints": "Not enough points to purchase this course.",
+      "alreadyPurchased": "You have already purchased this course."
+    },
+    "motivationalQuote1": "Health is not just a state of the body, but a balance of the mind.",
+    "motivationalQuote2": "Every small healthy habit is an investment in your future.",
+    "motivationalQuote3": "Knowledge is the power to change lives, and learning is a lifelong journey.",
+    "motivationalQuote4": "Take care of yourself first, so you can better care for others.",
+    "motivationalQuote5": "A healthy body is the dwelling place of the mind, let's build it together.",
+    "motivationalSubtext": "Use your points to start your health learning journey"
   }
 }

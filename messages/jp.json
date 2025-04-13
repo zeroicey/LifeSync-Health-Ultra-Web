@@ -206,5 +206,62 @@
     "requiredField": "この項目は必須です",
     "minLength": "最小 {count} 文字必要です",
     "maxLength": "最大 {count} 文字まで入力可能です"
+  },
+  "Store": {
+    "storeTitle": "コースストア",
+    "yourPoints": "あなたのポイント",
+    "pointsDescription": "ポイントは様々な健康コースやリソースと交換できます。健康データの記録やコミュニティ活動への参加でさらにポイントを獲得できます。",
+    "featuredCourses": "おすすめコース",
+    "allCourses": "すべてのコース",
+    "viewDetails": "詳細を見る",
+    "purchase": "購入する",
+    "purchasing": "購入中...",
+    "viewCourse": "コースを見る",
+    "purchaseCourse": "コースを購入",
+    "close": "閉じる",
+    "points": "ポイント",
+    "minutes": "分",
+    "loading": "読み込み中...",
+    "noCourses": "利用可能なコースがありません",
+    "tryDifferentCategory": "別のカテゴリーを選択してみてください",
+    "courseDescription": "コース説明",
+    "whatYouWillLearn": "学べること",
+    "new": "新着",
+    "popular": "人気",
+    "featured": "おすすめ",
+    "purchased": "購入済み",
+    "viewAll": "すべて見る",
+    "totalPoints": "合計ポイント",
+    "earnMorePoints": "ポイントをもっと獲得",
+    "youHaveEnoughPoints": "ポイントが十分あります（現在：{current}、必要：{required}）",
+    "youNeedMorePoints": "ポイントが不足しています（現在：{current}、必要：{required}、不足：{needed}）",
+    "categories": {
+      "title": "カテゴリー",
+      "all": "すべてのコース",
+      "yoga": "ヨガ",
+      "fitness": "フィットネス",
+      "nutrition": "栄養",
+      "meditation": "瞑想",
+      "mental_health": "メンタルヘルス",
+      "sleep": "睡眠",
+      "traditional_medicine": "伝統医学"
+    },
+    "levels": {
+      "beginner": "初級",
+      "intermediate": "中級",
+      "advanced": "上級"
+    },
+    "notifications": {
+      "purchaseSuccess": "コースの購入が完了しました！",
+      "purchaseError": "購入に失敗しました。後でもう一度お試しください。",
+      "insufficientPoints": "このコースを購入するのに十分なポイントがありません。",
+      "alreadyPurchased": "このコースはすでに購入済みです。"
+    },
+    "motivationalQuote1": "健康とは単に体の状態だけでなく、心のバランスでもあります。",
+    "motivationalQuote2": "小さな健康習慣の一つ一つが、あなたの未来への投資です。",
+    "motivationalQuote3": "知識は人生を変える力であり、学びは生涯の旅です。",
+    "motivationalQuote4": "まず自分自身をケアすることで、他者をより良くケアできるようになります。",
+    "motivationalQuote5": "健康な体は心の住まい、一緒に築いていきましょう。",
+    "motivationalSubtext": "ポイントを使って健康学習の旅を始めましょう"
   }
 }

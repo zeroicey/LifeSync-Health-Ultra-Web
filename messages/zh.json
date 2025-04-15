@@ -63,7 +63,8 @@
     "home": "首页",
     "community": "社区",
     "assistant": "助手",
-    "store": "商城"
+    "store": "商城",
+    "evaluate": "评估"
   },
   "Auth": {
     "login": {
@@ -147,10 +148,14 @@
     "images": "图片",
     "addImages": "添加图片",
     "addMoreImages": "添加更多图片",
+    "maxImagesReached": "最多只能添加4张图片",
     "uploading": "上传中...",
-    "maxImagesReached": "最多只能上传4张图片",
-    "creatingPost": "创建帖子",
-    "editingPost": "编辑帖子",
+    "publishing": "发布中...",
+    "updating": "更新中...",
+    "publishPost": "发布帖子",
+    "updatePost": "更新帖子",
+    "postingAs": "发布身份",
+    "optional": "可选",
     "allPosts": "全部帖子",
     "followingPosts": "关注的人",
     "trending": "热门",

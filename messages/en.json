@@ -63,7 +63,8 @@
     "home": "Home",
     "community": "Community",
     "assistant": "Assistant",
-    "store": "Store"
+    "store": "Store",
+    "evaluate": "Evaluate"
   },
   "Auth": {
     "login": {
@@ -151,6 +152,8 @@
     "maxImagesReached": "Maximum of 4 images reached",
     "creatingPost": "Creating post",
     "editingPost": "Editing post",
+    "postingAs": "Posting as",
+    "optional": "Optional",
     "allPosts": "All Posts",
     "followingPosts": "Following",
     "trending": "Trending",

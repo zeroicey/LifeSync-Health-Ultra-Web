@@ -187,26 +187,26 @@ export function CreatePostForm({ postToEdit, locale }: CreatePostFormProps) {
       <div className="space-y-4">
         <div>
           <Label htmlFor="title" className="text-gray-700 dark:text-gray-300 font-medium">
-            {t("title")} <span className="text-gray-400 dark:text-gray-500 text-sm font-normal">({t("optional")})</span>
+            {t("postTitle")} <span className="text-gray-400 dark:text-gray-500 text-sm font-normal">({t("optional")})</span>
           </Label>
           <Input
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder={t("titlePlaceholder")}
+            placeholder={t("postTitlePlaceholder")}
             className="mt-1 bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800/50 focus:border-indigo-300 dark:focus:border-indigo-700 rounded-lg"
           />
         </div>
         
         <div>
           <Label htmlFor="content" className="text-gray-700 dark:text-gray-300 font-medium">
-            {t("content")} <span className="text-red-500">*</span>
+            {t("postContent")} <span className="text-red-500">*</span>
           </Label>
           <Textarea
             id="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder={t("contentPlaceholder")}
+            placeholder={t("postContentPlaceholder")}
             className="mt-1 min-h-[150px] bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800/50 focus:border-indigo-300 dark:focus:border-indigo-700 rounded-lg"
             required
           />

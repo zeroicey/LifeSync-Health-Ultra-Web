@@ -23,7 +23,7 @@ export default function CommunityClient({ locale }: { locale: string }) {
           {t("community")}
         </h1>
         <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md hover:shadow-lg transition-shadow dark:from-indigo-600 dark:to-purple-600 dark:hover:from-indigo-500 dark:hover:to-purple-500 rounded-lg">
-          <Link href="/community/create" className="flex items-center">
+          <Link href={`/${locale}/community/create`} className="flex items-center">
             <Plus className="h-4 w-4 mr-2" />
             {t("createPost")}
           </Link>

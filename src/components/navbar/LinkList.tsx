@@ -1,4 +1,4 @@
-import { HelpCircle, Home, ShoppingBag, Users } from "lucide-react";
+import { Bot, HelpCircle, Home, ShoppingBag, Users } from "lucide-react";
 import { Button } from "../ui/button";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -13,10 +13,11 @@ export default function LinkList() {
     { href: "/community", icon: <Users size={18} />, label: t("community") },
     {
       href: "/assistant",
-      icon: <HelpCircle size={18} />,
+      icon: <Bot size={18} />,
       label: t("assistant"),
     },
     { href: "/store", icon: <ShoppingBag size={18} />, label: t("store") },
+    { href: "/evaluate", icon: <HelpCircle size={18} />, label: t("evaluate") },
   ];
 
   return (

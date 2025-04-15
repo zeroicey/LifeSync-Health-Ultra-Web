@@ -63,7 +63,8 @@
     "home": "ホーム",
     "community": "コミュニティ",
     "assistant": "アシスタント",
-    "store": "ストア"
+    "store": "ストア",
+    "evaluate": "評価"
   },
   "Auth": {
     "login": {
@@ -151,6 +152,8 @@
     "maxImagesReached": "最大4枚の画像に達しました",
     "creatingPost": "投稿を作成中",
     "editingPost": "投稿を編集中",
+    "postingAs": "投稿者",
+    "optional": "任意",
     "allPosts": "すべての投稿",
     "followingPosts": "フォロー中",
     "trending": "トレンド",

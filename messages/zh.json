@@ -105,10 +105,8 @@
     "createPostDescription": "分享你的想法、经验或问题与社区成员交流",
     "editPost": "编辑帖子",
     "editPostDescription": "更新你的帖子内容、标题或标签",
-    "publishPost": "发布",
-    "updatePost": "更新",
-    "publishing": "发布中...",
-    "updating": "更新中...",
+    "publish": "发布",
+    "update": "更新",
     "cancel": "取消",
     "delete": "删除",
     "edit": "编辑",
@@ -150,10 +148,6 @@
     "addMoreImages": "添加更多图片",
     "maxImagesReached": "最多只能添加4张图片",
     "uploading": "上传中...",
-    "publishing": "发布中...",
-    "updating": "更新中...",
-    "publishPost": "发布帖子",
-    "updatePost": "更新帖子",
     "postingAs": "发布身份",
     "optional": "可选",
     "allPosts": "全部帖子",
@@ -308,5 +302,61 @@
     "motivationalQuote4": "照顾好自己，才能更好地照顾他人。",
     "motivationalQuote5": "健康的身体是心灵的居所，让我们一起建造它。",
     "motivationalSubtext": "使用您的积分，开启健康学习之旅"
+  },
+  "Evaluate": {
+    "evaluateTitle": "心理评估测试",
+    "evaluateDescription": "探索各种心理评估测试，了解自己的性格特点、情绪状态和睡眠质量",
+    "availableTests": "可用测试",
+    "chooseTest": "选择一个测试开始你的心理健康评估之旅",
+    "searchTests": "搜索测试...",
+    "minutes": "分钟",
+    "questions": "个问题",
+    "popularity": "人气",
+    "startTest": "开始测试",
+    "noTestsFound": "未找到测试",
+    "tryDifferentSearch": "请尝试使用不同的搜索词或类别",
+    "testNotFound": "测试未找到",
+    "testNotFoundDescription": "抱歉，我们找不到您请求的测试。请返回测试列表选择其他测试。",
+    "backToTests": "返回测试列表",
+    "questionProgress": "问题 {current} / {total}",
+    "previous": "上一题",
+    "next": "下一题",
+    "complete": "完成测试",
+    "testCompleted": "测试完成！",
+    "testCompletedDescription": "您已完成 {testName} 测试。以下是您的测试结果和个性化建议。",
+    "recommendations": "个性化建议",
+    "shareResult": "分享结果",
+    "downloadResult": "下载结果",
+    "learnMore": "了解更多",
+    "loadingTest": "正在加载测试...",
+    "loadingTests": "正在加载测试列表...",
+    "categories": {
+      "all": "全部",
+      "personality": "性格测试",
+      "mood": "情绪测试",
+      "sleep": "睡眠测试",
+      "anxiety": "焦虑测试",
+      "depression": "抑郁测试",
+      "stress": "压力测试",
+      "relationship": "关系测试"
+    },
+    "features": {
+      "personality": {
+        "title": "性格测试",
+        "description": "了解您的性格特点、优势和潜在的发展方向"
+      },
+      "anxiety": {
+        "title": "焦虑测试",
+        "description": "评估您当前的焦虑水平并获取缓解建议"
+      },
+      "depression": {
+        "title": "抑郁测试",
+        "description": "了解您的情绪状态并获取专业支持建议"
+      },
+      "sleep": {
+        "title": "睡眠质量",
+        "description": "评估您的睡眠质量并获取改善睡眠的方法"
+      }
+    }
   }
 }

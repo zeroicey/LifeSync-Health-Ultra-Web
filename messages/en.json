@@ -306,5 +306,61 @@
     "motivationalQuote4": "Take care of yourself first, so you can better care for others.",
     "motivationalQuote5": "A healthy body is the dwelling place of the mind, let's build it together.",
     "motivationalSubtext": "Use your points to start your health learning journey"
+  },
+  "Evaluate": {
+    "evaluateTitle": "Psychological Assessment Tests",
+    "evaluateDescription": "Explore various psychological assessments to understand your personality traits, emotional state, and sleep quality",
+    "availableTests": "Available Tests",
+    "chooseTest": "Choose a test to begin your mental health assessment journey",
+    "searchTests": "Search tests...",
+    "minutes": "minutes",
+    "questions": "questions",
+    "popularity": "popularity",
+    "startTest": "Start Test",
+    "noTestsFound": "No Tests Found",
+    "tryDifferentSearch": "Please try a different search term or category",
+    "testNotFound": "Test Not Found",
+    "testNotFoundDescription": "Sorry, we couldn't find the test you requested. Please return to the test list to choose another test.",
+    "backToTests": "Back to Tests",
+    "questionProgress": "Question {current} / {total}",
+    "previous": "Previous",
+    "next": "Next",
+    "complete": "Complete Test",
+    "testCompleted": "Test Completed!",
+    "testCompletedDescription": "You have completed the {testName} test. Here are your results and personalized recommendations.",
+    "recommendations": "Personalized Recommendations",
+    "shareResult": "Share Result",
+    "downloadResult": "Download Result",
+    "learnMore": "Learn More",
+    "loadingTest": "Loading test...",
+    "loadingTests": "Loading tests...",
+    "categories": {
+      "all": "All",
+      "personality": "Personality",
+      "mood": "Mood",
+      "sleep": "Sleep",
+      "anxiety": "Anxiety",
+      "depression": "Depression",
+      "stress": "Stress",
+      "relationship": "Relationship"
+    },
+    "features": {
+      "personality": {
+        "title": "Personality Tests",
+        "description": "Understand your personality traits, strengths, and potential growth areas"
+      },
+      "anxiety": {
+        "title": "Anxiety Tests",
+        "description": "Assess your current anxiety levels and get relief suggestions"
+      },
+      "depression": {
+        "title": "Depression Tests",
+        "description": "Understand your emotional state and get professional support suggestions"
+      },
+      "sleep": {
+        "title": "Sleep Quality",
+        "description": "Evaluate your sleep quality and get methods to improve sleep"
+      }
+    }
   }
 }

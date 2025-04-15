@@ -306,5 +306,61 @@
     "motivationalQuote4": "まず自分自身をケアすることで、他者をより良くケアできるようになります。",
     "motivationalQuote5": "健康な体は心の住まい、一緒に築いていきましょう。",
     "motivationalSubtext": "ポイントを使って健康学習の旅を始めましょう"
+  },
+  "Evaluate": {
+    "evaluateTitle": "心理評価テスト",
+    "evaluateDescription": "さまざまな心理評価テストを通じて、あなたの性格特性、感情状態、睡眠の質を理解しましょう",
+    "availableTests": "利用可能なテスト",
+    "chooseTest": "テストを選択して、メンタルヘルス評価の旅を始めましょう",
+    "searchTests": "テストを検索...",
+    "minutes": "分",
+    "questions": "問",
+    "popularity": "人気度",
+    "startTest": "テスト開始",
+    "noTestsFound": "テストが見つかりません",
+    "tryDifferentSearch": "別の検索語やカテゴリをお試しください",
+    "testNotFound": "テストが見つかりません",
+    "testNotFoundDescription": "申し訳ありませんが、リクエストされたテストが見つかりませんでした。テスト一覧に戻って別のテストを選択してください。",
+    "backToTests": "テスト一覧に戻る",
+    "questionProgress": "質問 {current} / {total}",
+    "previous": "前へ",
+    "next": "次へ",
+    "complete": "テスト完了",
+    "testCompleted": "テスト完了！",
+    "testCompletedDescription": "{testName}テストが完了しました。あなたの結果とパーソナライズされた推奨事項をご覧ください。",
+    "recommendations": "パーソナライズされた推奨事項",
+    "shareResult": "結果をシェア",
+    "downloadResult": "結果をダウンロード",
+    "learnMore": "詳細を見る",
+    "loadingTest": "テストを読み込み中...",
+    "loadingTests": "テスト一覧を読み込み中...",
+    "categories": {
+      "all": "すべて",
+      "personality": "性格テスト",
+      "mood": "気分テスト",
+      "sleep": "睡眠テスト",
+      "anxiety": "不安テスト",
+      "depression": "うつテスト",
+      "stress": "ストレステスト",
+      "relationship": "人間関係テスト"
+    },
+    "features": {
+      "personality": {
+        "title": "性格テスト",
+        "description": "あなたの性格特性、強み、成長可能性を理解しましょう"
+      },
+      "anxiety": {
+        "title": "不安テスト",
+        "description": "現在の不安レベルを評価し、緩和のためのアドバイスを得る"
+      },
+      "depression": {
+        "title": "うつテスト",
+        "description": "あなたの感情状態を理解し、専門的なサポートの提案を受ける"
+      },
+      "sleep": {
+        "title": "睡眠の質",
+        "description": "睡眠の質を評価し、改善方法を知る"
+      }
+    }
   }
 }

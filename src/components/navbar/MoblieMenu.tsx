@@ -13,7 +13,7 @@ import {
   SidebarSeparator,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import { HelpCircle, Home, ShoppingBag, Users } from "lucide-react";
+import { Bot, HelpCircle, Home, ShoppingBag, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { UserMenu } from "./UserMenu";
 import { usePathname } from "@/i18n/navigation";
@@ -36,13 +36,18 @@ export function MobileMenu() {
     },
     {
       href: "/assistant",
-      icon: <HelpCircle size={18} className="text-purple-500" />,
+      icon: <Bot size={18} className="text-purple-500" />,
       label: t("assistant"),
     },
     {
       href: "/shop",
       icon: <ShoppingBag size={18} className="text-amber-500" />,
       label: t("store"),
+    },
+    {
+      href: "/evaluate",
+      icon: <HelpCircle size={18} className="text-red-400" />,
+      label: t("evaluate"),
     },
   ];
 

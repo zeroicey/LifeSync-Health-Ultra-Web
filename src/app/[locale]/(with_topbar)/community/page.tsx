@@ -1,29 +1,29 @@
 import { Props } from "@/types/setting";
 import { setRequestLocale } from "next-intl/server";
-import { PostList } from "@/components/community/PostList";
-import { CommunitySidebar } from "@/components/community/CommunitySidebar";
-import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { use } from "react";
-import { Link } from "@/i18n/navigation";
 
 export default function CommunityPage({ params }: Props) {
   const { locale } = use(params);
   setRequestLocale(locale);
 
   return (
-    <div className="flex p-6 w-full">
-      <div className="flex flex-col md:flex-row gap-6 w-full">
-        {/* 主内容区 */}
-        <div className="flex-1 order-2 md:order-1 min-w-0">
-          <ClientSideCommunity locale={locale} />
-        </div>
+    <div className="relative w-full">
+      {/* 背景装饰 */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-indigo-100/30 to-purple-100/20 rounded-full blur-3xl dark:from-indigo-900/10 dark:to-purple-900/5 -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-100/30 to-indigo-100/20 rounded-full blur-3xl dark:from-blue-900/10 dark:to-indigo-900/5 -z-10"></div>
+      
+      <div className="flex p-6 w-full">
+        <div className="flex flex-col md:flex-row gap-6 w-full">
+          {/* 主内容区 */}
+          <div className="flex-1 order-2 md:order-1 min-w-0">
+            <CommunityClient locale={locale} />
+          </div>
 
-        {/* 侧边栏 */}
-        <div className="w-full md:w-80 order-1 md:order-2">
-          <div className="sticky top-20">
-            <ClientSideSidebar locale={locale} />
+          {/* 侧边栏 */}
+          <div className="w-full md:w-80 order-1 md:order-2">
+            <div className="sticky top-20">
+              <SidebarClient locale={locale} />
+            </div>
           </div>
         </div>
       </div>
@@ -31,34 +31,6 @@ export default function CommunityPage({ params }: Props) {
   );
 }
 
-// 客户端组件：社区主内容
-
-function ClientSideCommunity({ locale }: { locale: string }) {
-  const t = useTranslations("Community");
-
-  return (
-    <div className="w-full">
-      {/* 移动端创建帖子按钮 */}
-      <div className="flex justify-between items-center mb-6 md:hidden w-full">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-          {t("community")}
-        </h1>
-        <Button>
-          <Link href="/community/create">
-            <Plus className="h-4 w-4 mr-2" />
-            {t("createPost")}
-          </Link>
-        </Button>
-      </div>
-
-      {/* 帖子列表 */}
-      <PostList locale={locale} />
-    </div>
-  );
-}
-
-// 客户端组件：侧边栏
-
-function ClientSideSidebar({ locale }: { locale: string }) {
-  return <CommunitySidebar locale={locale} />;
-}
+// 客户端组件导入
+import CommunityClient from "./community-client";
+import SidebarClient from "./sidebar-client";

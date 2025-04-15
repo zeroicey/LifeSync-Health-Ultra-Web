@@ -235,6 +235,46 @@
     "earnMorePoints": "获取更多积分",
     "youHaveEnoughPoints": "您有足够的积分（当前：{current}，需要：{required}）",
     "youNeedMorePoints": "积分不足（当前：{current}，需要：{required}，还差：{needed}）",
+    "instructor": "讲师",
+    "category": "分类",
+    "releaseDate": "发布日期",
+    "pointsHistory": "积分历史",
+    "noPointsHistory": "暂无积分记录",
+    "earnPoints": "赚取积分",
+    "earnPointsGuide": "积分获取指南",
+    "earnPointsDescription": "通过以下方式获取积分，兑换您喜欢的健康课程和资源。积分可在整个平台使用，助您实现健康目标。",
+    "learnMore": "了解更多",
+    "earnMethods": {
+      "postCreation": {
+        "title": "发布帖子",
+        "description": "在社区中分享您的健康经验、心得或问题，每次发布优质内容可获得积分奖励。"
+      },
+      "comment": {
+        "title": "评论互动",
+        "description": "参与社区讨论，回复他人的帖子，提供有价值的建议或支持，每次评论可获得积分。"
+      },
+      "dailyCheckIn": {
+        "title": "每日签到",
+        "description": "每天登录应用并完成签到，连续签到可获得额外积分奖励。"
+      },
+      "healthDataSync": {
+        "title": "健康数据同步",
+        "description": "将您的健康设备（如智能手表、手环等）与应用同步，记录健康数据可获得积分。"
+      },
+      "challengeCompletion": {
+        "title": "完成健康挑战",
+        "description": "参与并完成平台发起的各类健康挑战，如运动、饮食、冥想等挑战，可获得丰厚积分。"
+      }
+    },
+    "pointReasons": {
+      "postCreation": "发布帖子",
+      "comment": "评论",
+      "dailyCheckIn": "每日签到",
+      "healthDataSync": "健康数据同步",
+      "challengeCompletion": "完成挑战",
+      "coursePurchase": "购买课程",
+      "other": "其他"
+    },
     "categories": {
       "title": "课程分类",
       "all": "全部课程",

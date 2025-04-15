@@ -16,18 +16,20 @@ interface StorePageProps {
 
 export function StorePage({ locale }: StorePageProps) {
   const t = useTranslations("Store");
-  const { 
-    fetchCourses, 
-    fetchUserPoints, 
+  const {
+    fetchCourses,
+    fetchUserPoints,
     fetchPurchasedCourses,
     courses,
     userPoints,
-    isLoading 
+    isLoading,
   } = useStoreStore();
-  
-  const [selectedCategory, setSelectedCategory] = useState<CourseCategory | "all">("all");
+
+  const [selectedCategory, setSelectedCategory] = useState<
+    CourseCategory | "all"
+  >("all");
   const [isPageLoading, setIsPageLoading] = useState(true);
-  
+
   // 初始化数据
   useEffect(() => {
     const initData = async () => {
@@ -35,22 +37,23 @@ export function StorePage({ locale }: StorePageProps) {
       await Promise.all([
         fetchCourses(),
         fetchUserPoints(),
-        fetchPurchasedCourses()
+        fetchPurchasedCourses(),
       ]);
       setIsPageLoading(false);
     };
-    
+
     initData();
   }, [fetchCourses, fetchUserPoints, fetchPurchasedCourses]);
-  
+
   // 筛选课程
-  const filteredCourses = selectedCategory === "all" 
-    ? courses 
-    : courses.filter(course => course.category === selectedCategory);
-  
+  const filteredCourses =
+    selectedCategory === "all"
+      ? courses
+      : courses.filter((course) => course.category === selectedCategory);
+
   // 获取精选课程
-  const featuredCourses = courses.filter(course => course.featured);
-  
+  const featuredCourses = courses.filter((course) => course.featured);
+
   if (isPageLoading) {
     return (
       <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[60vh]">
@@ -61,50 +64,44 @@ export function StorePage({ locale }: StorePageProps) {
       </div>
     );
   }
-  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-6">
         {/* 左侧边栏 */}
         <div className="w-full md:w-1/4 space-y-6">
-          <PointsCard 
-            points={userPoints.total} 
-            isLoading={isLoading} 
-          />
-          
-          <CategoryFilter 
+          <PointsCard points={userPoints.total} isLoading={isLoading} />
+
+          <CategoryFilter
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
         </div>
-        
+
         {/* 主内容区 */}
         <div className="w-full md:w-3/4 space-y-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
             {t("storeTitle")}
           </h1>
-          
+
           <MotivationalBanner />
-          
+
           {/* 精选课程 */}
           {featuredCourses.length > 0 && (
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                {t("featuredCourses")}
-              </h2>
               <FeaturedCourses courses={featuredCourses} />
             </section>
           )}
-          
+
           {/* 所有课程 */}
           <section>
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-              {selectedCategory === "all" 
-                ? t("allCourses") 
+              {selectedCategory === "all"
+                ? t("allCourses")
                 : t(`categories.${selectedCategory}`)}
             </h2>
-            <CourseGrid 
-              courses={filteredCourses} 
+            <CourseGrid
+              courses={filteredCourses}
               isLoading={isLoading}
               locale={locale}
             />

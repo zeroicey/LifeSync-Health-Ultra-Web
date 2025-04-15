@@ -235,6 +235,46 @@
     "earnMorePoints": "Earn More Points",
     "youHaveEnoughPoints": "You have enough points (Current: {current}, Required: {required})",
     "youNeedMorePoints": "Not enough points (Current: {current}, Required: {required}, Needed: {needed})",
+    "instructor": "Instructor",
+    "category": "Category",
+    "releaseDate": "Release Date",
+    "pointsHistory": "Points History",
+    "noPointsHistory": "No points history available",
+    "earnPoints": "Earn Points",
+    "earnPointsGuide": "Points Earning Guide",
+    "earnPointsDescription": "Earn points through the following methods to redeem your favorite health courses and resources. Points can be used throughout the platform to help you achieve your health goals.",
+    "learnMore": "Learn More",
+    "earnMethods": {
+      "postCreation": {
+        "title": "Create Posts",
+        "description": "Share your health experiences, insights, or questions in the community. Each quality post earns you points."
+      },
+      "comment": {
+        "title": "Comment & Interact",
+        "description": "Participate in community discussions, reply to others' posts, and provide valuable advice or support. Each comment earns points."
+      },
+      "dailyCheckIn": {
+        "title": "Daily Check-in",
+        "description": "Log in to the app and complete your daily check-in. Consecutive check-ins earn bonus points."
+      },
+      "healthDataSync": {
+        "title": "Health Data Sync",
+        "description": "Sync your health devices (like smartwatches, fitness bands, etc.) with the app. Recording health data earns you points."
+      },
+      "challengeCompletion": {
+        "title": "Complete Health Challenges",
+        "description": "Participate in and complete various health challenges initiated by the platform, such as exercise, diet, meditation, etc., to earn substantial points."
+      }
+    },
+    "pointReasons": {
+      "postCreation": "Post Creation",
+      "comment": "Comment",
+      "dailyCheckIn": "Daily Check-in",
+      "healthDataSync": "Health Data Sync",
+      "challengeCompletion": "Challenge Completion",
+      "coursePurchase": "Course Purchase",
+      "other": "Other"
+    },
     "categories": {
       "title": "Categories",
       "all": "All Courses",

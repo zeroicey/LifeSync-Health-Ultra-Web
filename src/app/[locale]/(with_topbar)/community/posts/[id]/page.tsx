@@ -1,15 +1,16 @@
 import { setRequestLocale } from "next-intl/server";
 import { PostDetail } from "@/components/community/PostDetail";
+import { use } from "react";
 
 interface PostDetailPageProps {
   params: {
-    locale: string;
+    locale: Promise<string>;
     id: string;
   };
 }
 
-export default function PostDetailPage({ params }: PostDetailPageProps) {
-  const { locale, id } = params;
+export default async function PostDetailPage({ params }: PostDetailPageProps) {
+  const { locale, id } = await use(params);
   setRequestLocale(locale);
 
   return (

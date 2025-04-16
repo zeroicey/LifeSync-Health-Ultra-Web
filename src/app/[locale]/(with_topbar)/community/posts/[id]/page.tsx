@@ -1,16 +1,16 @@
 import { setRequestLocale } from "next-intl/server";
 import { PostDetail } from "@/components/community/PostDetail";
-import { use } from "react";
 
 interface PostDetailPageProps {
   params: {
-    locale: Promise<string>;
+    locale: string;
     id: string;
   };
 }
 
 export default async function PostDetailPage({ params }: PostDetailPageProps) {
-  const { locale, id } = await use(params);
+  // 在 Next.js 15 中，动态路由参数是异步的，需要先 await
+  const { locale, id } = await params;
   setRequestLocale(locale);
 
   return (

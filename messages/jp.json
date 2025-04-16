@@ -100,6 +100,8 @@
     }
   },
   "Community": {
+    "submitting": "送信中...",
+    "publishing": "公開中...",
     "community": "コミュニティ",
     "createPost": "投稿を作成",
     "createPostDescription": "コミュニティにあなたの考え、経験、または質問を共有しましょう",

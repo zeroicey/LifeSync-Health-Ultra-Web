@@ -50,7 +50,7 @@ export const mockEvaluationTests: EvaluationTest[] = [
     id: "stress-test",
     title: "压力知觉量表",
     description: "压力知觉量表（PSS）是一种评估个体感知压力水平的工具，帮助您了解自己的压力状态。",
-    imageUrl: "https://images.unsplash.com/photo-1623107274042-25962b22b29e?q=80&w=1974&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?q=80&w=2070&auto=format&fit=crop",
     category: TestCategory.Stress,
     duration: 8,
     questionCount: 14,

@@ -146,9 +146,27 @@ export const useEvaluateStore = create<EvaluateStore>((set, get) => ({
     
     // 模拟计算测试结果
     // 在实际应用中，这里应该有基于答案的复杂计算逻辑
-    const testResults = mockTestResults[currentTest.id];
-    const randomIndex = Math.floor(Math.random() * testResults.length);
-    const result = testResults[randomIndex];
+    let result: TestResult;
+    
+    // 检查是否存在该测试类型的结果数据
+    if (mockTestResults[currentTest.id]) {
+      const testResults = mockTestResults[currentTest.id];
+      const randomIndex = Math.floor(Math.random() * testResults.length);
+      result = testResults[randomIndex];
+    } else {
+      // 如果没有找到对应的测试结果，提供一个默认结果
+      result = {
+        id: `${currentTest.id}-default`,
+        title: `${currentTest.title} 测试结果`,
+        description: "感谢您完成测试！基于您的回答，我们为您生成了个性化的结果和建议。",
+        recommendations: [
+          "持续关注您的身心健康状态",
+          "尝试建立健康的日常习惯，如规律运动和良好的睡眠",
+          "当遇到困难时，寻求专业人士或亲友的支持和帮助",
+          "持续学习和应用自我关怀的技巧和策略"
+        ]
+      };
+    }
     
     // 更新状态
     set(state => ({

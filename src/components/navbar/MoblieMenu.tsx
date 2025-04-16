@@ -40,7 +40,7 @@ export function MobileMenu() {
       label: t("assistant"),
     },
     {
-      href: "/shop",
+      href: "/store",
       icon: <ShoppingBag size={18} className="text-amber-500" />,
       label: t("store"),
     },

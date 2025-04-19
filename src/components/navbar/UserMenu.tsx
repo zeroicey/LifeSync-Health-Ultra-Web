@@ -37,7 +37,7 @@ import {
   useLanguageStore,
   useThemeStore,
 } from "@/stores/setting.store";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import { useTheme } from "next-themes";
 
@@ -129,14 +129,18 @@ export function UserMenu({
 
         <div className="p-2">
           <DropdownMenuGroup>
-            <DropdownMenuItem className="rounded-lg cursor-pointer flex items-center gap-2 p-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-              <Sparkles className="h-4 w-4 text-indigo-500" />
-              <span>Dashboard</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="rounded-lg cursor-pointer flex items-center gap-2 p-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-              <User className="h-4 w-4 text-blue-500" />
-              <span>Account</span>
-            </DropdownMenuItem>
+            <Link href="/dashboard">
+              <DropdownMenuItem className="rounded-lg cursor-pointer flex items-center gap-2 p-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <Sparkles className="h-4 w-4 text-indigo-500" />
+                <span>Dashboard</span>
+              </DropdownMenuItem>
+            </Link>
+            <Link href="/account">
+              <DropdownMenuItem className="rounded-lg cursor-pointer flex items-center gap-2 p-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <User className="h-4 w-4 text-blue-500" />
+                <span>Account</span>
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuGroup>
 
           <DropdownMenuSeparator className="my-1 bg-slate-200 dark:bg-slate-700" />
